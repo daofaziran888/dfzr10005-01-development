@@ -33,3 +33,30 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .link { border: none; background: none; color: var(--brand); cursor: pointer; padding: 0; }
 .page-foot { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
 .error-text { color: #b42318; }
+
+/* 到期清理演练联动视图 */
+.tabs { display: flex; gap: 8px; margin: 8px 0 14px; }
+.tab { border: 1px solid var(--border); background: #fff; border-radius: 6px; padding: 6px 16px; cursor: pointer; font-size: 13px; }
+.tab.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+.badge { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.badge-clean { background: #fee4e2; color: #b42318; }
+.badge-defer { background: #d1fadf; color: #05603a; }
+.badge-limited { background: #fef0c7; color: #b54708; }
+.badge-risk-high { background: #fee4e2; color: #b42318; }
+.badge-risk-middle { background: #fef0c7; color: #b54708; }
+.badge-risk-low { background: #e0f2fe; color: #0369a1; }
+.badge-muted { background: #f1f5f9; color: var(--muted); }
+.version-bar { display: flex; flex-wrap: wrap; gap: 16px; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+.version-bar strong { color: #1f2937; }
+.panel { background: #fff; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 14px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; cursor: pointer; font-weight: 600; font-size: 14px; }
+.panel-body { padding: 0 14px 14px; }
+.panel-body .data-table { font-size: 12px; }
+.panel-body .data-table th, .panel-body .data-table td { padding: 6px 8px; }
+.drill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 1200px) { .drill-grid { grid-template-columns: 1fr; } }
+.reason-cell { max-width: 320px; color: var(--muted); font-size: 12px; }
+.snapshot-box { background: #f8fafc; border: 1px dashed var(--border); border-radius: 6px; padding: 8px 10px; font-size: 12px; color: var(--muted); margin: 6px 0; }
+.inline-note { font-size: 12px; color: var(--muted); margin: 4px 0 10px; }
+.conflict-text { color: #b42318; font-weight: 600; }
+.drill-audit-row { background: #f8fbff; }

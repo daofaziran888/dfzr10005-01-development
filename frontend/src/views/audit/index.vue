@@ -35,8 +35,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="row in rows" :key="String(row.id)">
-          <td v-for="column in columns" :key="column">{{ row[column] ?? '—' }}</td>
+        <tr v-for="row in rows" :key="String(row.id)" :class="{ 'drill-audit-row': isDrillAudit(row) }">
+          <td v-for="column in columns" :key="column">
+            <template v-if="column === '变更类型' && isDrillAudit(row)">
+              <span class="badge" :class="row['变更类型'] === '并发拒绝' ? 'badge-clean' : 'badge-risk-low'">
+                演练·{{ row[column] }}
+              </span>
+            </template>
+            <template v-else-if="column === '复核状态' && row['变更类型'] === '并发拒绝'">
+              <span class="conflict-text">{{ row[column] }}</span>
+            </template>
+            <template v-else>{{ row[column] ?? '—' }}</template>
+          </td>
           <td class="row-actions">
             <button
               v-for="action in actions"
@@ -80,6 +90,10 @@ const total = ref(0)
 const errorMessage = ref('')
 const filters = ref<Record<string, string>>({})
 const filterFields = columns.slice(0, 3)
+
+function isDrillAudit(row: Row): boolean {
+  return String(row['变更对象'] ?? '').startsWith('到期清理演练/')
+}
 
 function resetFilters() {
   filters.value = {}

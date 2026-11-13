@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 from app.routers import lifecycle as router_lifecycle
+from app.routers import drill as router_drill
 from app.routers import cost as router_cost
 from app.routers import heatmap as router_heatmap
 from app.routers import dag as router_dag
@@ -23,4 +24,4 @@ from app.routers import recycle as router_recycle
 from app.routers import audit as router_audit
 from app.routers import benchmark as router_benchmark
 
-ROUTERS = [router_lifecycle, router_cost, router_heatmap, router_dag, router_sla, router_resource, router_score, router_drift, router_catalog, router_retention, router_dedup, router_tier, router_baseline, router_recycle, router_audit, router_benchmark]
+ROUTERS = [router_lifecycle, router_drill, router_cost, router_heatmap, router_dag, router_sla, router_resource, router_score, router_drift, router_catalog, router_retention, router_dedup, router_tier, router_baseline, router_recycle, router_audit, router_benchmark]
